@@ -37,7 +37,7 @@ class TestTermsConditions():
         # Explicitly wait for the element to be clickable with a longer timeout
         try:
             terms_link = WebDriverWait(self.driver, 30).until(
-                EC.element_to_be_clickable((By.CSS_SELECTOR, "a:nth-child(3) > span"))
+                EC.element_to_be_clickable((By.CSS_SELECTOR, "a:nth-child(9) > span"))
             )
             terms_link.click()
         except Exception as e:
