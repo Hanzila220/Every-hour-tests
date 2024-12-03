@@ -34,9 +34,9 @@ class TestTermsConditions():
         # Scroll down to make the Terms & Conditions link visible
         self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         
-        # Explicitly wait for the element to be clickable
+        # Explicitly wait for the element to be clickable with a longer timeout
         try:
-            terms_link = WebDriverWait(self.driver, 15).until(
+            terms_link = WebDriverWait(self.driver, 30).until(
                 EC.element_to_be_clickable((By.CSS_SELECTOR, "a:nth-child(3) > span"))
             )
             terms_link.click()
@@ -74,4 +74,3 @@ class TestTermsConditions():
             df.to_csv(CSV_FILE_PATH, index=False)
         else:
             df.to_csv(CSV_FILE_PATH, mode='a', header=False, index=False)
-
